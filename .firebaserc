@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "testapp-6b048": {
+      "hosting": {
+        "testApp": [
+          "testapp-6b048"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "testapp-6b048"
+  }
+}

@@ -1,0 +1,66 @@
+
+
+<div class="header">
+    <mat-card>
+        <div class="row text-center p-3">
+            <div>
+                <button mat-icon-button class="goBack" color="warn" (click)="goBack()">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+            </div>
+
+            <form [formGroup]="form">
+                <div class="row">
+                    <div><img src="../../../../assets/testApp.png" width="40px" height="40px"></div>
+                    <div class="mt-1"><span class="text-primary"><span class="t">Test</span><span class="a">App</span></span></div>
+                    <div class="mt-3"><span class="text-black fw-semibold h4">R E G I S T E R</span></div>
+                    <div class="mt-2 mb-3"><span class="text-black">Fill in the required fields below.</span></div>
+
+                </div>
+
+                <div class="row forms">
+                <div class="input row ps-4 mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <mat-icon color="primary" matSuffix>alternate_email</mat-icon>
+                        <input matInput type="text" formControlName="email" autocomplete="off" style="text-transform: lowercase;">
+                        <mat-error>Enter a valid email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="input row ps-4 mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <mat-icon *ngIf="visibility"  (click)="showHide()" color="primary" matSuffix>visibility</mat-icon>
+                        <mat-icon *ngIf="visibility_off"  (click)="showHide()" color="primary" matSuffix>visibility_off</mat-icon>
+                        <input matInput [type]="type" formControlName="password" autocomplete="off">
+                        <mat-error>Password of 8 characters minimum</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="input row ps-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <mat-icon *ngIf="visibility2"  (click)="showHide2()" color="primary" matSuffix>visibility</mat-icon>
+                        <mat-icon *ngIf="visibility_off2"  (click)="showHide2()" color="primary" matSuffix>visibility_off</mat-icon>
+                        <input matInput [type]="type2" formControlName="confirmPassword" autocomplete="off">
+                        <mat-error>Password of 8 characters minimum</mat-error>
+                    </mat-form-field>
+                </div>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <mat-checkbox (change)="onCheck($event)" style="left: 40px;">
+                        <span class="text-black" style="font-size: 13px;">I accept the <span class="text-primary opacity-75 terms">Terms of use</span></span>
+                    </mat-checkbox>
+                </div>
+
+                <div class="row d-flex justify-content-center mt-3 mb-4">
+                    <button mat-button class="accept" (click)="onClick()" [disabled]="enabled">
+                        A C C E P T
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </mat-card>
+</div>

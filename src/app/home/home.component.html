@@ -1,0 +1,109 @@
+
+<mat-sidenav-container fullscreen>
+    <mat-toolbar class="toolbar">
+        <div class="row w-100">
+            <div class="col-sm-1">
+                <img src="../../assets/menu.png" width="28px" height="28px" (click)="sidenav.toggle()">
+            </div>
+            <div class="col-sm-3 text-center">
+                <img src="../../assets/testApp.png" width="30px" height="30px">
+                <mat-label class="h5 fw-normal"><span class="t ps-1">Test</span><span class="a">App</span></mat-label>
+            </div>
+            <div class="col-sm-3 text-center">
+                <mat-icon class="icon" color="accent">verified_user</mat-icon>
+                <mat-label matTooltip="Google verified app">Application verified</mat-label>
+            </div>
+            <div class="col-sm-3 text-center">
+                <mat-label class="text-white-50">
+                    <span>{{ date | date }}</span>
+                    <span> - </span>
+                    <span>{{ hour }}</span>:<span>{{ min }}</span>
+                </mat-label>
+            </div>
+            <div class="col-sm-2 d-flex flex-row-reverse">
+                <button mat-stroked-button color="warn" (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    <mat-label>Logout</mat-label>
+                </button>
+            </div>
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav opened mode="over" class="sidenav" #sidenav>
+        <mat-toolbar class="col">
+            <img [src]="img" width="45px" height="45px" class="img-b" matTooltip="Profile">
+            <div class="row ms-2 py-2">
+                <span class="userText name">{{ name | titlecase }}</span>
+                <span class="userText text-white-50 pb-2">@{{ email }}</span>
+            </div>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a
+                mat-list-item
+                routerLink="users"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/users.png" width="30px" height="30px">
+                <mat-label>Users</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="giphys"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/gif.png" width="30px" height="30px">
+                <mat-label>Giphys</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="countries"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/paises.png" width="30px" height="30px">
+                <mat-label>Countries</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="br-ba"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/marijuana.png" width="30px" height="30px">
+                <mat-label>Br Ba</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="heroes"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/heroe.png" width="30px" height="30px">
+                <mat-label>Heroes</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="movies"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/movie.png" width="30px" height="30px">
+                <mat-label>Movies</mat-label>
+            </a>
+        </mat-nav-list>    
+    </mat-sidenav>
+
+    <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+
+.header {
+    display: grid;
+    place-items: center;
+    padding-top: 3%;
+}
+
+.t { color: #4fa4f4; }
+
+.a { color: #711be0; }
+
+mat-card {
+    width: 35%;
+    height: auto;
+    align-items: center;
+    background: linear-gradient(#141E30, #243B55);
+    opacity: 1;
+}
+
+.goBack {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.forms {
+    display: grid;
+    place-items: center;
+}
+
+.input {
+    width: 90%;
+}
+
+.accept {
+    width: 90%;
+    height: 35px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.up {
+    color: rgb(142, 14, 227, 0.7);
+    &:hover {
+        color: rgb(142, 14, 227);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
