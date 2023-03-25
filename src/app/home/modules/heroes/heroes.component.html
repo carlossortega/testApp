@@ -1,1 +1,51 @@
-<p>heroes works!</p>
+
+<div class="row p-3 w-100">
+    <div class="col-sm-10">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Filter</mat-label>
+            <mat-icon matPrefix color="primary">search</mat-icon>
+            <mat-icon matSuffix color="warn">clear</mat-icon>
+            <input matInput type="text"/>
+        </mat-form-field>
+    </div>
+    <div class="col-sm-2 text-center pt-2">
+        <button mat-raised-button class="w-75" color="primary" [routerLink]="['/app/menu/heroes/create']">
+            <mat-icon>add</mat-icon>
+            <mat-label>Add Hero</mat-label>
+        </button>
+    </div>
+
+    <div class="col-3 d-flex justify-content-center" *ngFor="let h of heroes">
+        <mat-card>
+            <div class="p-2">
+                <mat-card-title>{{ h.superhero }}</mat-card-title>
+                <mat-card-subtitle>{{ h.alter_ego }}</mat-card-subtitle>
+            </div>
+            
+            <img mat-card-image [src]="h | heroImage" />
+
+            <mat-card-content class="p-3">
+                <h3><strong>{{ h.publisher }}</strong></h3>
+                <p class="h6">
+                    <strong>First Appearance:</strong><br>
+                    {{ h.first_appearance }}
+                    <br><br>
+                    <strong>Characters:</strong><br>
+                    {{ h.characters }}
+                </p>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-stroked-button color="accent" [routerLink]="['/app/menu/heroes/edit', h.id]">
+                    Edit
+                </button>
+                <span class="spacer"></span>
+                <button mat-stroked-button color="warn" [routerLink]="['/app/menu/heroes', h.id]">
+                    See more...
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+
+</div>

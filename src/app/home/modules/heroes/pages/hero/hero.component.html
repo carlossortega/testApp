@@ -1,0 +1,31 @@
+
+<div class="content">
+    <div class="contents">
+        <h2><strong>{{ hero.superhero }}</strong></h2>
+        <mat-divider class="bg-form mb-4"></mat-divider>
+        <img [src]="hero | heroImage" />
+    </div>
+    <div class="contents">
+        <h2><strong>{{ hero.publisher }}</strong></h2>
+        <mat-divider class="bg-form mb-4"></mat-divider>
+        <div class="p-3">
+            <h3>
+                <strong>Alter Ego:</strong><br>
+                <span>{{ hero.alter_ego }}</span>
+            </h3>
+            <br>
+            <h3>
+                <strong>First Appearance:</strong><br>
+                <span>{{ hero.first_appearance }}</span>
+            </h3>
+            <br>
+            <h3>
+                <strong>Characters:</strong><br>
+                <span>{{ hero.characters }}</span>
+            </h3>
+            <button mat-stroked-button color="warn" [routerLink]="['/app/menu/heroes/list']">
+                GO BACK
+            </button>
+        </div>
+    </div>
+</div>

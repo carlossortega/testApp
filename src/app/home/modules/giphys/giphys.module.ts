@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GiphysRoutingModule } from './giphys-routing.module';
 import { GiphysComponent } from './giphys.component';
+import { SharedModule } from '../../../shared/shared.module';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { GiphysComponent } from './giphys.component';
   imports: [
     CommonModule,
     GiphysRoutingModule,
+    SharedModule,
   ]
 })
 export class GyphysModule { }

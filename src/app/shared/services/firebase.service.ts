@@ -53,6 +53,22 @@ export class FirebaseService {
       //Sesion terminada 
       case 'auth/signOut':
         return this.toast.success('Session ended!');
+
+    // -----> AVISOS O ALERTAS DE TIPO DIFERENTE
+      case 'phoneNumber-format-invalid':
+        return this.toast.error('Preferred format: (012)-345-6789','Invalid number format');
+      case 'user-created':
+        return this.toast.success('User created successfully!');
+      case 'user-deleted':
+        return this.toast.success('User deleted successfully!');
+      case 'user-updated':
+        return this.toast.success('User updated successfully!');
+      case 'hero-created':
+        return this.toast.success('Hero created successfully!');
+      case 'hero-updated':
+          return this.toast.success('Hero updated successfully!');
+      case 'hero-deleted':
+        return this.toast.success('Hero deleted successfully!');
       default:
         return;
     }

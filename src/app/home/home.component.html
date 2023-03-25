@@ -3,7 +3,7 @@
     <mat-toolbar class="toolbar">
         <div class="row w-100">
             <div class="col-sm-1">
-                <img src="../../assets/menu.png" width="28px" height="28px" (click)="sidenav.toggle()">
+                <img src="../../assets/menu/menu.png" width="28px" height="28px" (click)="sidenav.toggle()">
             </div>
             <div class="col-sm-3 text-center">
                 <img src="../../assets/testApp.png" width="30px" height="30px">
@@ -41,51 +41,51 @@
         <mat-nav-list>
             <a
                 mat-list-item
-                routerLink="users"
+                routerLink="users/list"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/users.png" width="30px" height="30px">
-                <mat-label>Users</mat-label>
+                <img src="../../assets/menu/users.png" width="30px" height="30px">
+                <mat-label class="ms-2">Users</mat-label>
             </a>
             <a
                 mat-list-item
                 routerLink="giphys"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/gif.png" width="30px" height="30px">
-                <mat-label>Giphys</mat-label>
+                <img src="../../assets/menu/gif.png" width="30px" height="30px">
+                <mat-label class="ms-2">Giphys</mat-label>
             </a>
             <a
                 mat-list-item
                 routerLink="countries"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/paises.png" width="30px" height="30px">
-                <mat-label>Countries</mat-label>
+                <img src="../../assets/menu/paises.png" width="30px" height="30px">
+                <mat-label class="ms-2">Countries</mat-label>
             </a>
             <a
                 mat-list-item
                 routerLink="br-ba"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/marijuana.png" width="30px" height="30px">
-                <mat-label>Br Ba</mat-label>
+                <img src="../../assets/menu/marijuana.png" width="30px" height="30px">
+                <mat-label class="ms-2">Br Ba</mat-label>
             </a>
             <a
                 mat-list-item
-                routerLink="heroes"
+                routerLink="heroes/list"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/heroe.png" width="30px" height="30px">
-                <mat-label>Heroes</mat-label>
+                <img src="../../assets/menu/heroe.png" width="30px" height="30px">
+                <mat-label class="ms-2">Heroes</mat-label>
             </a>
             <a
                 mat-list-item
                 routerLink="movies"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/movie.png" width="30px" height="30px">
-                <mat-label>Movies</mat-label>
+                <img src="../../assets/menu/movie.png" width="30px" height="30px">
+                <mat-label class="ms-2">Movies</mat-label>
             </a>
         </mat-nav-list>    
     </mat-sidenav>

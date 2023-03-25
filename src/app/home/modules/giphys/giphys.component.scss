@@ -1,0 +1,20 @@
+
+.content {
+    display: flex;
+    min-width: 100%;
+}
+
+#sidebar {
+    height: 100%;
+    min-height: 100vh;
+    min-width: 180px;
+}
+
+.dev { font-family: 'Courier New'; }
+
+.sh { font-style: italic; font-family: 'Franklin Gothic Medium'; }
+
+a { background-color: rgba(128, 128, 128, 0.3); }
+
+
+mat-form-field{ width: 100%; }

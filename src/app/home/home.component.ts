@@ -7,6 +7,7 @@ import { AuthService } from '../shared/services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  token: any;
   img!: any;
   name!: any;
   email!: any;
@@ -19,19 +20,16 @@ export class HomeComponent implements OnInit {
     private authService: AuthService
   ){}
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.img = this.authService.photo;
-    if( this.img === undefined ){ this.img = ('../../assets/user.png') }
+    if( this.img === undefined ){ this.img = ('../../assets/menu/user.png') }
     this.name = this.authService.name;
     if( this.name === undefined ){ this.name = 'Anonymous' }
     this.email = this.authService.email;
   }
 
-
-
-
-
   logout(){
     this.authService.logout();
+    localStorage.removeItem('token');
   }
 }

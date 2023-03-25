@@ -1,0 +1,88 @@
+
+<div class="content">
+    <form [formGroup]="form">
+    <div class="row contents">
+        <div class="text-center">
+            <h2 class="bg-form" *ngIf="create"><strong>C R E A T E</strong></h2>
+            <h2 class="bg-form" *ngIf="!create"><strong>E D I T</strong></h2>
+            <mat-divider class="bg-form-d mb-4"></mat-divider>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <mat-form-field appearance="outline" style="width: 45%;">
+                <mat-label>Superhero</mat-label>
+                <input matInput type="text" required formControlName="superhero"/>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 45%;">
+                <mat-label>Alter Ego</mat-label>
+                <input matInput type="text" required formControlName="alter_ego"/>
+                <mat-error>This field is required</mat-error>
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>First Appearance</mat-label>
+            <input matInput type="text" required formControlName="first_appearance"/>
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Characters</mat-label>
+            <input matInput type="text" required formControlName="characters"/>
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Publisher</mat-label>
+            <mat-select required formControlName="publisher">
+                <mat-option *ngFor="let item of publishers" [value]="item">
+                    {{ item }}
+                </mat-option>
+            </mat-select>
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Photo Url</mat-label>
+            <input matInput type="url" formControlName="alt_img"/>
+        </mat-form-field>
+
+        <div *ngIf="create" class="text-center">
+            <button
+                mat-flat-button 
+                color="primary" 
+                class="button rounded-pill"
+                (click)="onClick()"    
+                >
+                <mat-icon matPrefix>add</mat-icon>
+                Create
+            </button>
+        </div>
+        <div *ngIf="!create" class="d-flex px-3">
+            <button
+                mat-flat-button 
+                color="primary" 
+                class="w-25 rounded-pill"
+                (click)="onClick()"    
+            >
+                <mat-icon matPrefix>edit</mat-icon>
+                Edit
+            </button>
+            <span class="spacer"></span>
+            <button
+                mat-flat-button 
+                color="warn" 
+                class="w-25 rounded-pill"
+                (click)="onDelete()"    
+            >
+                <mat-icon matPrefix>delete</mat-icon>
+                Delete
+            </button>
+        </div>
+        <div>
+            <button mat-stroked-button color="warn" class="btn_back" [routerLink]="['/app/menu/heroes/list']">
+                GO BACK
+            </button>
+        </div>
+    </div>
+    </form>
+    <div class="contents">
+        <img [src]="hero | heroImage" />
+    </div>
+</div>

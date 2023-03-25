@@ -1,0 +1,135 @@
+
+<div class="header">
+    <form [formGroup]="form">
+        <fieldset disabled>
+            <div class="row">
+                <div class="text-center mb-2">
+                <mat-label class="h5 text-white-50">User ID: <span class="h5 ms-2 text-white">{{ idUser }}</span></mat-label>
+                </div>
+
+                <mat-label class="h6 text-white-50 mb-3">Data Profile</mat-label>
+                <div class="col-sm-3 mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" formControlName="name" minlength="7"/>
+                        <mat-icon matSuffix color="primary">abc</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput type="text" formControlName="username" minlength="4"/>
+                        <mat-icon matSuffix color="primary">abc</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Website</mat-label>
+                        <input matInput type="text" formControlName="website"/>
+                        <mat-icon matSuffix color="primary">travel_explore</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input matInput type="text" formControlName="phone" placeholder="000-000-0000" minlength="10"/>
+                        <mat-icon matSuffix color="primary">phone</mat-icon>
+                        <mat-error>Format: 000-000-0000</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email" />
+                        <mat-icon matSuffix color="primary">alternate_email</mat-icon>
+                        <mat-error>Enter a valid email</mat-error>
+                    </mat-form-field>
+                </div>
+                
+                <mat-label class="h6 text-white-50 mb-3 mt-2">Address</mat-label>
+                <div class="col-sm-4 mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Street</mat-label>
+                        <input matInput type="email" formControlName="street" />
+                        <mat-icon matSuffix color="primary">edit_road</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Suite</mat-label>
+                        <input matInput type="email" formControlName="suite" />
+                        <mat-icon matSuffix color="primary">apartment</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Zipcode</mat-label>
+                        <input matInput type="text" formControlName="zipcode" minlength="5" />
+                        <mat-icon matSuffix color="primary">pin</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput type="email" formControlName="city" />
+                        <mat-icon matSuffix color="primary">location_city</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Latitude</mat-label>
+                        <input matInput type="text" formControlName="lat" />
+                        <mat-icon matSuffix color="primary">place</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Longitude</mat-label>
+                        <input matInput type="text" formControlName="lng" />
+                        <mat-icon matSuffix color="primary">place</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <mat-label class="h6 text-white-50 mb-3 mt-2">Company</mat-label>        
+                <div class="col-sm-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" formControlName="nameComp" minlength="4"/>
+                        <mat-icon matSuffix color="primary">business</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Catch Phrase</mat-label>
+                        <input matInput type="text" formControlName="catchPhrase" minlength="25"/>
+                        <mat-icon matSuffix color="primary">abc</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Bs</mat-label>
+                        <input matInput type="text" formControlName="bs" minlength="15"/>
+                        <mat-icon matSuffix color="primary">abc</mat-icon>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </fieldset>
+        <div class="col mt-2 d-flex justify-content-between px-4">
+            <button mat-raised-button color="warn" (click)="onCancel()">
+                B A C K
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,53 @@
-<p>giphys works!</p>
+
+<div class="content">
+    <div class="col-sm-2">
+        <div class="bg-dark p-4" id="sidebar">
+            <div class="row mb-3">
+                <span class="h5 fw-semibold">GIPHY</span>
+                <span class="h5 dev">Developers</span>
+            </div>
+            <mat-radio-group color="primary" (change)="radioGroup($event.value)">
+                <mat-radio-button checked value="gifs">G I F S</mat-radio-button><br>
+                <mat-radio-button value="stickers">S T I C K E R S</mat-radio-button>
+            </mat-radio-group>
+            <hr>
+            <mat-label class="h6 sh">Search history:</mat-label>
+            <mat-nav-list *ngFor="let item of history" style="margin-bottom: -10px;">
+                <a mat-list-item class="text-dark" (click)="historyClick(item)">
+                    {{ item | titlecase }}
+                </a>
+            </mat-nav-list>
+        </div>
+    </div>
+
+
+    <div class="col-sm-10 p-3">
+        <div class="row">
+            <mat-form-field appearance="outline" color="primary" class="w-100">
+                <mat-label>Search...</mat-label>
+                <mat-icon matPrefix color="primary">search</mat-icon>
+                <mat-icon matSuffix color="warn" (click)="clear()">clear</mat-icon>
+                <input matInput type="text" (keyup.enter)="search()" #txt/>
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="row">
+            <div *ngIf="loading" class="text-center mt-5">
+                <app-loading></app-loading>
+            </div>
+            <div *ngFor="let item of Data" class="col-sm-3 mb-3">
+                <div class="card">
+                    <img [src]="item.images.downsized_medium.url" [alt]="item.title" />
+                </div>
+            </div>
+        </div>
+            
+
+
+
+
+    </div>
+</div>
+
+
+   

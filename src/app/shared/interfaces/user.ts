@@ -1,6 +1,5 @@
 
 export interface User {
-    checked?: boolean;
     id:       number;
     name:     string;
     username: string;

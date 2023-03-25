@@ -1,0 +1,36 @@
+
+.bg-form {
+    color: rgb(155, 63, 242);
+    &-d {
+        background-color: rgb(155, 63, 242);
+    }
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    gap: 20px;
+}
+
+.contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_back {
+    margin-top: 80px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+img {
+    width: 100%;
+}
+
+.button {
+    width: 90%;
+}
