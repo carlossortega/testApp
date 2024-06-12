@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,9 @@ export class HomeComponent implements OnInit {
 
   date = new Date();
   hour = new Date().getHours();
+  hours!: any;
   min = new Date().getMinutes();
+  minutes!: any;
 
   constructor(
     private authService: AuthService
@@ -26,6 +29,18 @@ export class HomeComponent implements OnInit {
     this.name = this.authService.name;
     if( this.name === undefined ){ this.name = 'Anonymous' }
     this.email = this.authService.email;
+
+    if( this.hour < 10 ){
+      this.hours = '0'+this.hour;
+    } else {
+      this.hours = this.hour;
+    }
+    if( this.min < 10 ){
+      this.minutes = '0'+this.min;
+    } else {
+      this.minutes = this.min;
+    }
+
   }
 
   logout(){

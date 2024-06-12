@@ -66,7 +66,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onCancel(){
-    this.router.navigate(['app/menu/users/list'])
+    this.router.navigate(['app/users'])
   }
 
   onClick(){
@@ -97,7 +97,7 @@ export class UserFormComponent implements OnInit {
         }
         this.userService.post(data);
         this.firebaseService.code('user-created');
-        this.router.navigate(['app/menu/users/list']);
+        this.router.navigate(['app/users']);
       } else {
         //recibo id
         const data: User = {
@@ -125,7 +125,7 @@ export class UserFormComponent implements OnInit {
         }
         this.userService.put(data);
         this.firebaseService.code('user-updated');
-        this.router.navigate(['app/menu/users/list']);
+        this.router.navigate(['app/users']);
       }
     }
   }

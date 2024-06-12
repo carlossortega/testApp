@@ -7,13 +7,20 @@ import { HeroComponent } from './pages/hero/hero.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      { path: 'list', component: HeroesComponent },
-      { path: 'create', component: HeroFormComponent },
-      { path: 'edit/:id', component: HeroFormComponent },
-      { path: ':id', component: HeroComponent },
-    ]
-  }
+    component: HeroesComponent
+  },
+  {
+    path: 'create',
+    component: HeroFormComponent
+  },
+  {
+    path: 'edit/:id',
+    component: HeroFormComponent
+  },
+  {
+    path: ':id',
+    component: HeroComponent
+  },
 ];
 
 @NgModule({

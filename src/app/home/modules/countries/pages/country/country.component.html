@@ -1,0 +1,196 @@
+
+<div class="content">
+    <div class="row content">
+        <div class="col-sm-2">
+            <img [src]="country.flags.png" width="200px" height="100px" alt="country.flags.alt">
+        </div>
+        <div class="col-sm-8">
+            <div class="row pt-3"><mat-label class="h5">{{ country.name.common }}</mat-label></div>
+            <div class="row pt-2"><mat-label class="h5">{{ country.name.official }}</mat-label></div>
+        </div>
+        <div class="col-sm-2">
+            <button mat-stroked-button color="warn" [routerLink]="['/app/countries']"><mat-icon matPrefix>reply</mat-icon>GO BACK</button>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <div class="col-sm-3">
+            <mat-label class="h6">Name:</mat-label><span class="ms-2 h6">{{ country.name.common }}</span><br>
+            <mat-label class="h6">Latitude:</mat-label><span class="ms-2 h6">{{ country.latlng[0] }}</span><br>
+            <mat-label class="h6">Longitude:</mat-label><span class="ms-2 h6">{{ country.latlng[1] }}</span>
+            <br><br>
+            <mat-label class="h6">Capital:</mat-label><span class="ms-2 h6">{{ country.capital }}</span><br>
+            <mat-label class="h6">Latitude:</mat-label><span class="ms-2 h6">{{ country.capitalInfo.latlng[0] }}</span><br>
+            <mat-label class="h6">Longitude:</mat-label><span class="ms-2 h6">{{ country.capitalInfo.latlng[1] }}</span>
+            <br><br>
+            <mat-label class="h6">Continent:</mat-label><span class="h6 ms-2">{{ country.continents }}</span>
+            <br><br>
+            <mat-label class="h6">Region:</mat-label><span class="h6 ms-2">{{ country.region }}</span>
+            <br><br>
+            <mat-label class="h6">Subregion:</mat-label><span class="h6 ms-2">{{ country.subregion }}</span>
+            <br><br>
+            <mat-label class="h6">Independent Country:</mat-label>
+                <span class="ms-2 h6" *ngIf="country.independent">Yes</span>
+                <span class="ms-2 h6" *ngIf="!country.independent">No</span>
+            <br><br>
+            <mat-label class="h6">Status:</mat-label><span class="ms-2 h6">{{ country.status }}</span>
+            <br><br>
+            <mat-label class="h6">Landlocked:</mat-label>
+            <span class="ms-2 h6" *ngIf="country.landlocked">Yes</span>
+            <span class="ms-2 h6" *ngIf="!country.landlocked">No</span>
+            <br><br>
+            <mat-label class="h6">UN Member:</mat-label>
+            <span class="ms-2 h6" *ngIf="country.unMember">Yes</span>
+            <span class="ms-2 h6" *ngIf="!country.unMember">No</span>
+            <br><br>
+            <mat-label class="h6">Population:</mat-label><span class="ms-2 h6">{{ country.population | number }}</span>
+            <br><br>
+            <mat-label class="h6">Area:</mat-label><span class="ms-2 h6">{{ country.area | number }}</span>    
+        </div>
+        <div class="col-sm-3">
+            <mat-label class="h6">Alt Spellings: </mat-label><br>
+            <ul class="mb-4">
+                <li *ngFor="let item of country.altSpellings"><span class="h6">{{ item }}</span></li>
+            </ul>
+            <mat-label class="h6">Codes:</mat-label>
+            <ul class="mb-4">
+                <li class="h6">cca2: <span>{{ country.cca2 }}</span></li>
+                <li class="h6">cca3: <span>{{ country.cca3 }}</span></li>
+                <li class="h6">ccn3: <span>{{ country.ccn3 }}</span></li>
+            </ul>
+            <mat-label class="h6">Borders:</mat-label>
+            <ul *ngIf="!country.borders" class="mb-4">
+                <li><span class="h6">None</span></li>
+            </ul>
+            <ul *ngIf="country.borders" class="mb-4">
+                <li *ngFor="let item of country.borders"><span class="h6">{{ item }}</span></li>
+            </ul>
+            <mat-label class="h6">Idd:</mat-label>
+            <ul>
+                <li class="h6">Root: <span class="h6">{{ country.idd.root }}</span></li>
+                <li class="h6">Amount Suffixes: <span class="h6">{{ country.idd.suffixes.length }}</span></li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <mat-label *ngIf="country.tld" class="h6">TLDs:</mat-label>
+            <ul *ngIf="country.tld" class="mb-4">
+                <li *ngFor="let item of country.tld"><span class="h6">{{ item }}</span></li>
+            </ul>
+            <mat-label class="h6">Timezones:</mat-label>
+            <ul class="mb-4">
+                <li *ngFor="let item of country.timezones"><span clasS="h6">{{ item }}</span></li>
+            </ul>
+            <mat-label *ngIf="country.coatOfArms" class="h6">Coat Of Arms</mat-label>
+            <ul *ngIf="country.coatOfArms" class="mb-4">
+                <li *ngIf="country.coatOfArms.png" class="h6"><a [href]="country.coatOfArms.png">PNG</a></li>
+                <li *ngIf="country.coatOfArms.png" class="h6"><a [href]="country.coatOfArms.svg">SVG</a></li>
+            </ul>
+            <mat-label *ngIf="country.maps" class="h6">Maps:</mat-label>
+            <ul *ngIf="country.maps" class="mb-4">
+                <li class="h6"><a [href]="country.maps.googleMaps">Google Maps</a></li>
+                <li class="h6"><a [href]="country.maps.openStreetMaps">Open Street Maps</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <mat-label class="h6">Translations:</mat-label>
+            <ul *ngIf="translations.ara">
+                <li>{{ translations.ara.common }}</li>
+                <li>{{ translations.ara.official }}</li>
+            </ul>
+            <ul *ngIf="translations.bre">
+                <li>{{ translations.bre.common }}</li>
+                <li>{{ translations.bre.official }}</li>
+            </ul>
+            <ul *ngIf="translations.ces">
+                <li>{{ translations.ces.common }}</li>
+                <li>{{ translations.ces.official }}</li>
+            </ul>
+            <ul *ngIf="translations.cym">
+                <li>{{ translations.cym.common }}</li>
+                <li>{{ translations.cym.official }}</li>
+            </ul>
+            <ul *ngIf="translations.deu">
+                <li>{{ translations.deu.common }}</li>
+                <li>{{ translations.deu.official }}</li>
+            </ul>
+            <ul *ngIf="translations.est">
+                <li>{{ translations.est.common }}</li>
+                <li>{{ translations.est.official }}</li>
+            </ul>
+            <ul *ngIf="translations.fin">
+                <li>{{ translations.fin.common }}</li>
+                <li>{{ translations.fin.official }}</li>
+            </ul>
+            <ul *ngIf="translations.fra">
+                <li>{{ translations.fra.common }}</li>
+                <li>{{ translations.fra.official }}</li>
+            </ul>
+            <ul *ngIf="translations.hrv">
+                <li>{{ translations.hrv.common }}</li>
+                <li>{{ translations.hrv.official }}</li>
+            </ul>
+            <ul *ngIf="translations.hun">
+                <li>{{ translations.hun.common }}</li>
+                <li>{{ translations.hun.official }}</li>
+            </ul>
+            <ul *ngIf="translations.ita">
+                <li>{{ translations.ita.common }}</li>
+                <li>{{ translations.ita.official }}</li>
+            </ul>
+            <ul *ngIf="translations.jpn">
+                <li>{{ translations.jpn.common }}</li>
+                <li>{{ translations.jpn.official }}</li>
+            </ul>
+            <ul *ngIf="translations.kor">
+                <li>{{ translations.kor.common }}</li>
+                <li>{{ translations.kor.official }}</li>
+            </ul>
+            <ul *ngIf="translations.nld">
+                <li>{{ translations.nld.common }}</li>
+                <li>{{ translations.nld.official }}</li>
+            </ul>
+            <ul *ngIf="translations.per">
+                <li>{{ translations.per.common }}</li>
+                <li>{{ translations.per.official }}</li>
+            </ul>
+            <ul *ngIf="translations.pol">
+                <li>{{ translations.pol.common }}</li>
+                <li>{{ translations.pol.official }}</li>
+            </ul>
+            <ul *ngIf="translations.por">
+                <li>{{ translations.por.common }}</li>
+                <li>{{ translations.por.official }}</li>
+            </ul>
+            <ul *ngIf="translations.rus">
+                <li>{{ translations.rus.common }}</li>
+                <li>{{ translations.rus.official }}</li>
+            </ul>
+            <ul *ngIf="translations.slk">
+                <li>{{ translations.slk.common }}</li>
+                <li>{{ translations.slk.official }}</li>
+            </ul>
+            <ul *ngIf="translations.spa">
+                <li>{{ translations.spa.common }}</li>
+                <li>{{ translations.spa.official }}</li>
+            </ul>
+            <ul *ngIf="translations.srp">
+                <li>{{ translations.srp.common }}</li>
+                <li>{{ translations.srp.official }}</li>
+            </ul>
+            <ul *ngIf="translations.swe">
+                <li>{{ translations.swe.common }}</li>
+                <li>{{ translations.swe.official }}</li>
+            </ul>
+            <ul *ngIf="translations.tur">
+                <li>{{ translations.tur.common }}</li>
+                <li>{{ translations.tur.official }}</li>
+            </ul>
+            <ul *ngIf="translations.urd">
+                <li>{{ translations.urd.common }}</li>
+                <li>{{ translations.urd.official }}</li>
+            </ul>
+            <ul *ngIf="translations.zho">
+                <li>{{ translations.zho.common }}</li>
+                <li>{{ translations.zho.official }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

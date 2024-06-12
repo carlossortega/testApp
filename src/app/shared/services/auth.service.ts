@@ -35,7 +35,7 @@ export class AuthService {
         let userEmail = user?.email;
         this.email = userEmail?.split('@')[0];
         this.firebaseService.code('auth/signIn');
-        this.router.navigate(['app/menu']);
+        this.router.navigate(['app']);
       })
     }).catch( error => {
       this.firebaseService.code(error.code);
@@ -66,7 +66,7 @@ export class AuthService {
         this.email = userEmail?.split('@')[0];
         //Message
         this.firebaseService.code('auth/signIn');
-        this.router.navigate(['app/menu']);
+        this.router.navigate(['app']);
       }).catch( error => {
         this.firebaseService.code(error.code);
       })
@@ -84,7 +84,7 @@ export class AuthService {
         this.email = userEmail?.split('@')[0];
         //Message
         this.firebaseService.code('auth/signIn');
-        this.router.navigate(['app/menu']);
+        this.router.navigate(['app']);
       }).catch( error => {
         this.firebaseService.code(error.code);
       })
@@ -102,7 +102,7 @@ export class AuthService {
          this.email = userEmail?.split('@')[0];
          //Message
         this.firebaseService.code('auth/signIn');
-        this.router.navigate(['app/menu']);
+        this.router.navigate(['app']);
       }).catch( error => {
         this.firebaseService.code(error.code);
       })

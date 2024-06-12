@@ -51,15 +51,15 @@ export class UsersComponent implements OnInit {
   }
 
   onCreate(){
-    this.router.navigate(['app/menu/users/post']);
+    this.router.navigate(['/app/users/post']);
   }
 
   onEdit(id: number){
-    this.router.navigate(['app/menu/users/edit', id]);
+    this.router.navigate(['app/users/edit', id]);
   }
 
   onSee(id: any){
-    this.router.navigate(['app/menu/users/view', id]);
+    this.router.navigate(['app/users/view', id]);
   }
 
   onDelete(id: number){

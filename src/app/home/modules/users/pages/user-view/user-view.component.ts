@@ -64,6 +64,6 @@ export class UserViewComponent {
     }
 
     onCancel(){
-        this.router.navigate(['app/menu/users/list'])
+        this.router.navigate(['app/users'])
     }
 }

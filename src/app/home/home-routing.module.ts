@@ -5,11 +5,6 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'menu',
-    pathMatch: 'full'
-  },
-  {
-    path: 'menu',
     component: HomeComponent,
     children: [
       {
@@ -25,8 +20,8 @@ const routes: Routes = [
         loadChildren: () => import('./modules/countries/countries.module').then( (m) => m.CountriesModule )
       },
       {
-        path: 'br-ba',
-        loadChildren: () => import('./modules/br-ba/br-ba.module').then( (m) => m.BrBaModule )
+        path: 'marvel',
+        loadChildren: () => import('./modules/marvel/marvel.module').then( (m) => m.MarvelModule )
       },
       {
         path: 'heroes',

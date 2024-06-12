@@ -1,0 +1,46 @@
+
+.contents {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    height: 91.2vh;
+    background-color: black;
+}
+
+.img-back {
+    background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('/assets/marvel/marvel2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-content{
+    margin-left: 80px;
+    width: 70%;
+    height: 12%;
+    border: 1px solid #720606;
+    display: flex;
+    margin-bottom: 5%;
+    background-color: rgba(46, 41, 41, 0.5);
+}
+
+.g-c {
+    display: grid;
+    place-items: center;
+}
+
+.btn-content:hover {
+    transform: scale(1.2);
+    text-shadow: 0   2px   10px   rgb(255, 255, 255, 0.9);
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white
+}

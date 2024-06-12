@@ -19,6 +19,10 @@ export class HeroService {
     return this.http.get<Hero>(`${ this.baseUrl }/${ id }`);
   }
 
+  getSuggestions(term: string){
+    return this.http.get<Hero[]>(`${this.baseUrl}?q=${term}&_limit=5`);
+  }
+
   post( heroe: Hero ): Observable<Hero>{
     return this.http.post<Hero>(`${ this.baseUrl }`, heroe);
   }

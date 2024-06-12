@@ -7,13 +7,20 @@ import { UserViewComponent } from './pages/user-view/user-view.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      { path: 'list', component: UsersComponent },
-      { path: 'post', component: UserFormComponent },
-      { path: 'edit/:id', component: UserFormComponent },
-      { path: 'view/:id', component: UserViewComponent }
-    ]
+    component: UsersComponent,
   },
+  {
+    path: 'post',
+    component: UserFormComponent
+  },
+  {
+    path: 'edit/:id',
+    component: UserFormComponent
+  },
+  {
+    path: 'view/:id',
+    component: UserViewComponent
+  }
 ];
 
 @NgModule({

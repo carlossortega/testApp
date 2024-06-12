@@ -4,19 +4,31 @@
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>Filter</mat-label>
             <mat-icon matPrefix color="primary">search</mat-icon>
-            <mat-icon matSuffix color="warn">clear</mat-icon>
-            <input matInput type="text"/>
+            <mat-icon matSuffix color="warn" (click)="clear()">clear</mat-icon>
+            <input matInput type="text" (keyup)="searchHeroes()" #termino [matAutocomplete]="autocomplete"/>
+            <mat-autocomplete autoActiveFirstOption #autocomplete="matAutocomplete" (optionSelected)="optionSelected($event)">
+                <mat-option *ngFor="let item of suggestions" [value]="item">
+                    {{ item.superhero }}
+                </mat-option>
+                <mat-option value="" *ngIf="suggestions.length === 0 && termino.value.length > 0">
+                    No se encontro nada con el termino {{ termino.value }}
+                </mat-option>
+            </mat-autocomplete>
         </mat-form-field>
     </div>
     <div class="col-sm-2 text-center pt-2">
-        <button mat-raised-button class="w-75" color="primary" [routerLink]="['/app/menu/heroes/create']">
+        <button mat-raised-button class="w-75" color="primary" [routerLink]="['/app/heroes/create']">
             <mat-icon>add</mat-icon>
             <mat-label>Add Hero</mat-label>
         </button>
     </div>
 
+    <div *ngIf="showHero">
+        <pre>{{ heroSelected | json }}</pre>
+    </div>
+
     <div class="col-3 d-flex justify-content-center" *ngFor="let h of heroes">
-        <mat-card>
+        <mat-card *ngIf="!showHero">
             <div class="p-2">
                 <mat-card-title>{{ h.superhero }}</mat-card-title>
                 <mat-card-subtitle>{{ h.alter_ego }}</mat-card-subtitle>
@@ -36,11 +48,11 @@
             </mat-card-content>
 
             <mat-card-actions>
-                <button mat-stroked-button color="accent" [routerLink]="['/app/menu/heroes/edit', h.id]">
+                <button mat-stroked-button color="accent" [routerLink]="['/app/heroes/edit', h.id]">
                     Edit
                 </button>
                 <span class="spacer"></span>
-                <button mat-stroked-button color="warn" [routerLink]="['/app/menu/heroes', h.id]">
+                <button mat-stroked-button color="warn" [routerLink]="['/app/heroes', h.id]">
                     See more...
                 </button>
             </mat-card-actions>

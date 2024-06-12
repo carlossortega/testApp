@@ -91,7 +91,7 @@ export class HeroFormComponent implements OnInit {
                     heroe.alt_img = img;
                 }
                 this.heroService.post(heroe).subscribe( hero => {
-                    this.router.navigate(['app/menu/heroes/edit', hero.id ]);
+                    this.router.navigate(['app/heroes/edit', hero.id ]);
                     this.firebaseService.code('hero-created');
                 })
             }
@@ -100,7 +100,7 @@ export class HeroFormComponent implements OnInit {
 
     onDelete(){
         this.heroService.delete( this.hero ).subscribe( hero => {
-            this.router.navigate(['app/menu/heroes/list']);
+            this.router.navigate(['app/heroes']);
             this.firebaseService.code('hero-deleted');
         })
     }

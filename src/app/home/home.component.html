@@ -17,7 +17,7 @@
                 <mat-label class="text-white-50">
                     <span>{{ date | date }}</span>
                     <span> - </span>
-                    <span>{{ hour }}</span>:<span>{{ min }}</span>
+                    <span>{{ hours }}</span>:<span>{{ minutes }}</span>
                 </mat-label>
             </div>
             <div class="col-sm-2 d-flex flex-row-reverse">
@@ -39,14 +39,25 @@
         </mat-toolbar>
 
         <mat-nav-list>
+            <!-- CRUDs -->
             <a
                 mat-list-item
-                routerLink="users/list"
+                routerLink="heroes"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/menu/heroe.png" width="30px" height="30px">
+                <mat-label class="ms-2">Heroes</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="users"
                 (click)="sidenav.toggle()"
             >
                 <img src="../../assets/menu/users.png" width="30px" height="30px">
                 <mat-label class="ms-2">Users</mat-label>
             </a>
+            <!-- APIs -->
+            <mat-divider style="border-width: 2px; background-color: rgba(155, 32, 212, 0.5);"></mat-divider>
             <a
                 mat-list-item
                 routerLink="giphys"
@@ -65,27 +76,43 @@
             </a>
             <a
                 mat-list-item
-                routerLink="br-ba"
+                routerLink="marvel"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/menu/marijuana.png" width="30px" height="30px">
-                <mat-label class="ms-2">Br Ba</mat-label>
+                <img src="../../assets/menu/marvel.png" width="30px" height="30px">
+                <mat-label class="ms-2">Marvel</mat-label>
             </a>
             <a
                 mat-list-item
-                routerLink="heroes/list"
+                routerLink="countries"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/menu/heroe.png" width="30px" height="30px">
-                <mat-label class="ms-2">Heroes</mat-label>
+                <img src="../../assets/menu/movie.png" width="30px" height="30px">
+                <mat-label class="ms-2">Movies</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="br-ba"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/menu/pokeball.png" width="30px" height="30px">
+                <mat-label class="ms-2">Pokemon</mat-label>
             </a>
             <a
                 mat-list-item
                 routerLink="movies"
                 (click)="sidenav.toggle()"
             >
-                <img src="../../assets/menu/movie.png" width="30px" height="30px">
-                <mat-label class="ms-2">Movies</mat-label>
+                <img src="../../assets/menu/morty.png" width="30px" height="30px">
+                <mat-label class="ms-2">Rick&Morty</mat-label>
+            </a>
+            <a
+                mat-list-item
+                routerLink="movies"
+                (click)="sidenav.toggle()"
+            >
+                <img src="../../assets/menu/starwars.png" width="30px" height="30px">
+                <mat-label class="ms-2">Star Wars</mat-label>
             </a>
         </mat-nav-list>    
     </mat-sidenav>

@@ -69,6 +69,10 @@ export class FirebaseService {
           return this.toast.success('Hero updated successfully!');
       case 'hero-deleted':
         return this.toast.success('Hero deleted successfully!');
+      case 'no-selected-type-search':
+        return this.toast.error('Selected a search type!');
+      case 'no-term-search':
+        return this.toast.warning('Enter a search term!');
       default:
         return;
     }
