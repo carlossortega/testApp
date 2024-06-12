@@ -28,24 +28,23 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Notas de actualización
 
-#Ejecutar el siguiente comando para instalar las librerias utilizadas en este proyecto
-#npm install
+- Ejecutar el siguiente comando para instalar las librerias utilizadas en este proyecto: npm install
 
-#Levantar el proyecto, el puerto por defecto es 4200 
-#ng serve --open 
+- Levantar el proyecto, el puerto por defecto es 4200: ng serve --open 
 
-#En la vista de login, registrarte con un correo personal y establecer una nueva contraseña para loggearse en la app.
-#Su correo personal es importante, ya que para recuperación de constraseña se envia las instrucciones al correo registrado.
+- En la vista de login, registrarte con un correo personal y establecer una nueva contraseña para loggearse en la app.
+- Su correo personal es importante, ya que para recuperación de constraseña se envia las instrucciones al correo registrado.
+- Se implemento Firebase como proveedor para authenticacion de la app.
 
 ## Ultimas actualizaciones de al APP
 
-#¡IMPORTANTE PARA PERMITIR EL FUNCIONAMIENTO DEL MODULO "Heroes"!
- #Extraer la carpeta heroes-json del proyecto
- #Copiarla en otra ruta de sus archivos del ordenador
- #Acceder a la carpeta heroes-json ya localizada en otro path diferente al proyecto
- #Ejecutar el comando npm install -g json-server
- #Posteriormente ejecutar el comando json-server --watch db.json
- #Este ultimo comando levantara un  backend con los heroes predefinidos dentro de el
+¡IMPORTANTE PARA PERMITIR EL FUNCIONAMIENTO DEL MODULO "Heroes"!
+ - Extraer la carpeta heroes-json del proyecto
+ - Copiarla en otra ruta de sus archivos del ordenador
+ - Acceder a la carpeta heroes-json ya localizada en otro path diferente al proyecto
+ - Ejecutar el comando npm install -g json-server
+ - Posteriormente ejecutar el comando json-server --watch db.json
+ - Este ultimo comando levantara un  backend con los heroes predefinidos dentro de el
 
  Modulos actualmente funcionando y probados son:
  - Heroes
